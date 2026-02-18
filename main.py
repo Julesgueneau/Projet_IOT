@@ -101,9 +101,9 @@ async def ttn_uplink(request: Request):
                 conn.execute("INSERT INTO user_positions (lat, lon, nb_bornes) VALUES (?, ?, ?)",
                              (est_lat, est_lon, len(valid_aps_for_calc)))
                 conn.commit()
-                print(f"📍 POSITION CALCULÉE ET SAUVEGARDÉE : {est_lat}, {est_lon}")
+                print(f" POSITION CALCULÉE ET SAUVEGARDÉE : {est_lat}, {est_lon}")
         else:
-            print("⚠️ Aucune borne connue trouvée dans wiglenetwork.")
+            print(" Aucune borne connue trouvée dans wiglenetwork.")
         
         conn.close()
         return {"status": "success"}
